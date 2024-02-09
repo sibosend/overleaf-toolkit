@@ -4,7 +4,7 @@ services:
 
     sharelatex:
         restart: always
-        image: "${IMAGE}"
+        image: wrm244/sharelatex:with-texlive-full
         container_name: sharelatex
         volumes:
             - "${SHARELATEX_DATA_PATH}:/var/lib/sharelatex"

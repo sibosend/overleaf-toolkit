@@ -1,0 +1,41 @@
+#### Overleaf RC ####
+
+PROJECT_NAME=overleaf
+
+# Sharelatex container
+# Uncomment the SHARELATEX_IMAGE_NAME variable to use a user-defined image.
+# SHARELATEX_IMAGE_NAME=sharelatex/sharelatex
+SHARELATEX_DATA_PATH=data/sharelatex
+SERVER_PRO=false
+SHARELATEX_LISTEN_IP=127.0.0.1
+SHARELATEX_PORT=9000
+
+# Sibling Containers
+SIBLING_CONTAINERS_ENABLED=false
+DOCKER_SOCKET_PATH=/var/run/docker.sock
+
+# Mongo configuration
+MONGO_ENABLED=true
+MONGO_DATA_PATH=data/mongo
+MONGO_IMAGE=mongo:4.4
+
+# Redis configuration
+REDIS_ENABLED=true
+REDIS_DATA_PATH=data/redis
+REDIS_IMAGE=redis:6.2
+
+# Git-bridge configuration (Server Pro only)
+GIT_BRIDGE_ENABLED=false
+GIT_BRIDGE_DATA_PATH=data/git-bridge
+
+# TLS proxy configuration (optional)
+# See documentation in doc/tls-proxy.md
+NGINX_ENABLED=false
+NGINX_CONFIG_PATH=config/nginx/nginx.conf
+NGINX_HTTP_PORT=80
+# Replace these IP addresses with the external IP address of your host
+NGINX_HTTP_LISTEN_IP=127.0.1.1
+NGINX_TLS_LISTEN_IP=127.0.1.1
+TLS_PRIVATE_KEY_PATH=config/nginx/certs/overleaf_key.pem
+TLS_CERTIFICATE_PATH=config/nginx/certs/overleaf_certificate.pem
+TLS_PORT=443
