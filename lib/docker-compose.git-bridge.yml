@@ -3,7 +3,7 @@ version: '2.2'
 services:
 
     git-bridge:
-        restart: always
+        restart: no
         image: "${GIT_BRIDGE_IMAGE}"
         volumes:
             - "${GIT_BRIDGE_DATA_PATH}:/data/git-bridge"
@@ -19,8 +19,8 @@ services:
         env_file:
             - ../config/variables.env
         user: root
-        command: ["/server-pro-start.sh"]
+        command: [ "/server-pro-start.sh" ]
 
     sharelatex:
-      links:
-        - git-bridge
+        links:
+            - git-bridge

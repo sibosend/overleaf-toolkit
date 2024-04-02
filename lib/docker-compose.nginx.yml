@@ -11,7 +11,7 @@ services:
       - "${TLS_PRIVATE_KEY_PATH}:/certs/nginx_key.pem:ro"
       - "${TLS_CERTIFICATE_PATH}:/certs/nginx_certificate.pem:ro"
       - "${NGINX_CONFIG_PATH}:/etc/nginx/nginx.conf:ro"
-    restart: always
+    restart: no
     container_name: nginx
     depends_on:
       - sharelatex
